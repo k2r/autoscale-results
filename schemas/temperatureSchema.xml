@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<stream>
+	<name>temperature</name>
+	<attributes>
+		<attribute type="integer" name="temperature">
+			<value type="min">16</value>
+			<value type="max">28</value>
+		</attribute>
+	</attributes>
+</stream>

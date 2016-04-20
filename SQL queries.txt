@@ -1,0 +1,7 @@
+To get the average processing time per CPU:
+
+SELECT `timestamp`, AVG(`processing_time`) AS 'average_processing_time' FROM `benchs` GROUP BY `timestamp`
+
+To get only the for first worker cpu usages:
+
+SELECT `timestamp`, `cpu_0`, `cpu_1`, `cpu_2`, `cpu_3` FROM `cpu`

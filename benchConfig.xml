@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<parameters>
+	<bench_home_directory>C:\These\D2\Implémentations\Tests</bench_home_directory>
+	<master_host>localhost</master_host>
+	<topology_id>student</topology_id>
+	<stream_generator_conf_file>jars\streamSimParams.xml</stream_generator_conf_file>
+	<stream_name>student</stream_name>
+	<stream_port>5354</stream_port>
+	<stream_type>1</stream_type>
+	<system_monitor_conf_file>jars\sigarParams.xml</system_monitor_conf_file>
+	<system_monitor_port>6162</system_monitor_port>
+	<allocation_monitor_conf_file>jars\allocParams.xml</allocation_monitor_conf_file>
+	<allocation_monitor_port>4142</allocation_monitor_port>
+	<stream_host>localhost</stream_host>
+	<stream_host_port>5354</stream_host_port>
+	<monitor_host>localhost</monitor_host>
+	<monitor_host_port>6162</monitor_host_port>
+	<database_host>localhost</database_host>
+	<nb_supervisors>8</nb_supervisors>
+	<window_size>10</window_size>
+	<window_step>5</window_step>
+</parameters>
