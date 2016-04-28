@@ -3,8 +3,12 @@
 	<name>temperature</name>
 	<attributes>
 		<attribute type="integer" name="temperature">
-			<value type="min">16</value>
-			<value type="max">28</value>
+			<value type="min">24</value>
+			<value type="max">34</value>
+		</attribute>
+		<attribute type="integer" name="code">
+			<value type="min">1</value>
+			<value type="max">3</value>
 		</attribute>
 	</attributes>
 </stream>
