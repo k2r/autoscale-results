@@ -8,7 +8,7 @@
 		</attribute>
 		<attribute type="integer" name="code">
 			<value type="min">1</value>
-			<value type="max">3</value>
+			<value type="max">4</value>
 		</attribute>
 	</attributes>
 </stream>
