@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 28 Avril 2016 à 17:35
+-- Généré le :  Lun 02 Mai 2016 à 17:42
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,6 +19,34 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `benchmarks`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `boltexecute`
+--
+
+CREATE TABLE IF NOT EXISTS `boltexecute` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `component_id` varchar(255) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `processLatencyMs` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106667 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `boltfail`
+--
+
+CREATE TABLE IF NOT EXISTS `boltfail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `component_id` varchar(255) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `failLatencyMs` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -50,7 +78,35 @@ CREATE TABLE IF NOT EXISTS `lineartopology` (
   `longitude` double NOT NULL,
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spoutack`
+--
+
+CREATE TABLE IF NOT EXISTS `spoutack` (
+  `id` int(11) NOT NULL,
+  `component_id` varchar(255) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `completeLatencyMs` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `spoutfail`
+--
+
+CREATE TABLE IF NOT EXISTS `spoutfail` (
+  `id` int(11) NOT NULL,
+  `component_id` varchar(255) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `failLatencyMs` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -66,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `startopology` (
   `longitude` double NOT NULL,
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34196 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
