@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 04 Mai 2016 à 16:55
+-- Généré le :  Dim 08 Mai 2016 à 21:48
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -23,45 +23,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `cpu_load`
+-- Structure de la table `operator_cpu_loads`
 --
 
-CREATE TABLE IF NOT EXISTS `cpu_load` (
+CREATE TABLE IF NOT EXISTS `operator_cpu_loads` (
   `timestamp` int(11) NOT NULL,
+  `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `cpuLoad` int(11) NOT NULL,
-  PRIMARY KEY (`timestamp`,`task_id`)
+  `average_cpu_load` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
+  KEY `timestamp` (`timestamp`,`component_id`,`task_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `executed_tuples`
+-- Structure de la table `operator_latencies`
 --
 
-CREATE TABLE IF NOT EXISTS `executed_tuples` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `operator_latencies` (
+  `timestamp` int(11) NOT NULL,
   `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `processLatencyMs` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `average_latency` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
+  KEY `timestamp` (`timestamp`,`component_id`,`task_id`),
+  KEY `timestamp_2` (`timestamp`,`component_id`,`task_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `outputs`
+-- Structure de la table `operator_queues`
 --
 
-CREATE TABLE IF NOT EXISTS `outputs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `component_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `operator_queues` (
+  `timestamp` int(11) NOT NULL,
+  `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `stream_id` int(11) NOT NULL,
-  `target_component` int(11) NOT NULL,
-  `target_task` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `inputs` int(11) NOT NULL,
+  `nb_executed` int(11) NOT NULL,
+  `outputs` int(11) NOT NULL,
+  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
+  KEY `timestamp` (`timestamp`,`component_id`,`task_id`),
+  KEY `timestamp_2` (`timestamp`,`component_id`,`task_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -114,45 +120,43 @@ CREATE TABLE IF NOT EXISTS `results_star` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `scheduling`
+-- Structure de la table `topology_latencies`
 --
 
-CREATE TABLE IF NOT EXISTS `scheduling` (
+CREATE TABLE IF NOT EXISTS `topology_latencies` (
   `timestamp` int(11) NOT NULL,
-  `component_id` int(11) NOT NULL,
+  `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `worker_host` varchar(255) NOT NULL,
-  `worker_port` int(11) NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`)
+  `average_latency` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`component_id`,`task_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tuples_failed`
+-- Structure de la table `topology_losses`
 --
 
-CREATE TABLE IF NOT EXISTS `tuples_failed` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `topology_losses` (
+  `timestamp` int(11) NOT NULL,
   `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `failLatencyMs` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `losses` int(11) NOT NULL,
+  PRIMARY KEY (`timestamp`,`component_id`,`task_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tuples_latency`
+-- Structure de la table `topology_throughput`
 --
 
-CREATE TABLE IF NOT EXISTS `tuples_latency` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `topology_throughput` (
+  `timestamp` int(11) NOT NULL,
   `component_id` varchar(255) NOT NULL,
   `task_id` int(11) NOT NULL,
-  `completeLatencyMs` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `throughput` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
