@@ -10,7 +10,7 @@
 	<stream_host>localhost</stream_host>
 	
 	<!--Initial number of tasks per component (per default, 1)-->
-	<nb_tasks>8</nb_tasks>
+	<nb_tasks>4</nb_tasks>
 	
 	<!--Initial number of executors per component (per default, 1 per task)-->
 	<nb_executors>1</nb_executors>
