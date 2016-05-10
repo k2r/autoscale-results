@@ -6,7 +6,7 @@
 	<transition type="linear">
 		<duration>480</duration>
 	</transition>
-	<profile type="standard" rate="1000">
+	<profile type="standard" rate="300">
 		<duration>60</duration>
 	</profile>
 </variations>
