@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<parameters>
+	<!--The name of the stream to play-->
+	<stream_name>temperature</stream_name>
+	<!--The port to emit the stream, make sure it is declared in the configuration file of the rmi server-->
+	<stream_port>5354</stream_port>
+	<!--The variation to apply on the stream
+		1. Strictly increasing input rate (Linear)
+		2. Strictly increasing input rate (Scale)
+		3. Strictly increasing input rate (Exponential)
+		4. Strictly increasing input rate (Logarithmic)
+		5. Strictly decreasing input rate (Linear);
+		6. Strictly decreasing input rate (Scale);
+		7. Strictly decreasing input rate (Exponential);
+		8. All input rate variations (All types);
+		9. No input rate variation
+	-->
+	<stream_type>1</stream_type>
+	<!--The interval of time, in seconds, between two logical timestamps-->
+	<interval>1</interval>
+	
+	<!--Parameters to improve the simulator parallelism, do not change if you are not sure-->
+	<executors>8</executors>
+	<threads>256</threads>
+	<sequential>500</sequential>
+</parameters>

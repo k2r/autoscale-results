@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<variations>
+	<profile type="standard" rate="10">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>40</duration>
+	</transition>
+	<profile type="standard" rate="500">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>40</duration>
+	</transition>
+	<profile type="standard" rate="10">
+		<duration>40</duration>
+	</profile>
+	<transition type="exponential">
+		<duration>40</duration>
+	</transition>
+	<profile type="standard" rate="500">
+		<duration>40</duration>
+	</profile>
+	<transition type="exponential">
+		<duration>40</duration>
+	</transition>
+	<profile type="standard" rate="10">
+		<duration>40</duration>
+	</profile>
+	<transition type="logarithmic">
+		<duration>40</duration>
+	</transition>
+	<profile type="standard" rate="500">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>0</duration>
+	</transition>
+	<profile type="standard" rate="400">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>0</duration>
+	</transition>
+	<profile type="standard" rate="250">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>0</duration>
+	</transition>
+	<profile type="standard" rate="100">
+		<duration>40</duration>
+	</profile>
+	<transition type="linear">
+		<duration>0</duration>
+	</transition>
+	<profile type="standard" rate="10">
+		<duration>40</duration>
+	</profile>
+</variations>

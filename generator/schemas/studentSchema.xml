@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<stream>
+	<name>student</name>
+	<attributes>
+		<attribute type="enumerate" name="nom">
+			<value type="option">Josiane</value>
+			<value type="option">Monique</value>
+			<value type="option">Veronique</value>
+			<value type="option">Ghislaine</value>
+			<value type="option">Viviane</value>
+			<value type="option">Virginie</value>
+			<value type="option">Marie-Francoise</value>
+			<value type="option">Therese</value>
+			<value type="option">Chantal</value>
+		</attribute>
+		<attribute type="integer" name="age">
+			<value type="min">18</value>
+			<value type="max">25</value>
+		</attribute>
+		<attribute type="enumerate" name="dept">
+			<value type="option">INFO</value>
+			<value type="option">MECA</value>
+			<value type="option">BIO</value>
+		</attribute>
+		<attribute type="enumerate" name="promotion">
+			<value type="option">L1</value>
+			<value type="option">L2</value>
+			<value type="option">L3</value>
+			<value type="option">M1</value>
+			<value type="option">M2</value>
+		</attribute>
+	</attributes>
+</stream>

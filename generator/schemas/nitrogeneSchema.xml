@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<stream>
+	<name>nitrogene</name>
+	<attributes>
+		<attribute type="integer" name="taux">
+			<value type="min">20</value>
+			<value type="max">100</value>
+		</attribute>
+	</attributes>
+</stream>
