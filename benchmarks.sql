@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Dim 08 Mai 2016 à 21:48
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+-- Serveur: localhost
+-- Généré le : Ven 10 Juin 2016 à 13:59
+-- Version du serveur: 5.1.53
+-- Version de PHP: 5.3.4
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,62 +16,61 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `benchmarks`
+-- Base de données: `benchmarks`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `operator_cpu_loads`
+-- Structure de la table `all_time_bolts_stats`
+--
+-- Création: Mar 07 Juin 2016 à 15:22
 --
 
-CREATE TABLE IF NOT EXISTS `operator_cpu_loads` (
+CREATE TABLE IF NOT EXISTS `all_time_bolts_stats` (
   `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `average_cpu_load` double NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
-  KEY `timestamp` (`timestamp`,`component_id`,`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `operator_latencies`
---
-
-CREATE TABLE IF NOT EXISTS `operator_latencies` (
-  `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `average_latency` double NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
-  KEY `timestamp` (`timestamp`,`component_id`,`task_id`),
-  KEY `timestamp_2` (`timestamp`,`component_id`,`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `operator_queues`
---
-
-CREATE TABLE IF NOT EXISTS `operator_queues` (
-  `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `inputs` int(11) NOT NULL,
-  `nb_executed` int(11) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `port` int(11) NOT NULL,
+  `topology` varchar(255) NOT NULL,
+  `component` varchar(255) NOT NULL,
+  `start_task` int(11) NOT NULL,
+  `end_task` int(11) NOT NULL,
+  `executed` int(11) NOT NULL,
   `outputs` int(11) NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`,`task_id`),
-  KEY `timestamp` (`timestamp`,`component_id`,`task_id`),
-  KEY `timestamp_2` (`timestamp`,`component_id`,`task_id`)
+  `execute_ms_avg` double NOT NULL,
+  `selectivity` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`host`,`port`,`topology`,`component`,`start_task`,`end_task`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `all_time_spouts_stats`
+--
+-- Création: Mar 07 Juin 2016 à 15:11
+--
+
+CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
+  `timestamp` int(11) NOT NULL,
+  `host` varchar(255) NOT NULL,
+  `port` int(11) NOT NULL,
+  `topology` varchar(255) NOT NULL,
+  `component` varchar(255) NOT NULL,
+  `start_task` int(11) NOT NULL,
+  `end_task` int(11) NOT NULL,
+  `outputs` int(11) NOT NULL,
+  `throughput` int(11) NOT NULL,
+  `losses` int(11) NOT NULL,
+  `complete_ms_avg` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`host`,`port`,`topology`,`component`,`start_task`,`end_task`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `results_diamond`
+--
+-- Création: Mar 07 Juin 2016 à 15:07
 --
 
 CREATE TABLE IF NOT EXISTS `results_diamond` (
@@ -90,6 +88,8 @@ CREATE TABLE IF NOT EXISTS `results_diamond` (
 --
 -- Structure de la table `results_linear`
 --
+-- Création: Mar 07 Juin 2016 à 15:07
+--
 
 CREATE TABLE IF NOT EXISTS `results_linear` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -99,12 +99,14 @@ CREATE TABLE IF NOT EXISTS `results_linear` (
   `longitude` double NOT NULL,
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7344 ;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `results_star`
+--
+-- Création: Mar 07 Juin 2016 à 15:07
 --
 
 CREATE TABLE IF NOT EXISTS `results_star` (
@@ -116,48 +118,3 @@ CREATE TABLE IF NOT EXISTS `results_star` (
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `topology_latencies`
---
-
-CREATE TABLE IF NOT EXISTS `topology_latencies` (
-  `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `average_latency` double NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`,`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `topology_losses`
---
-
-CREATE TABLE IF NOT EXISTS `topology_losses` (
-  `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `losses` int(11) NOT NULL,
-  PRIMARY KEY (`timestamp`,`component_id`,`task_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `topology_throughput`
---
-
-CREATE TABLE IF NOT EXISTS `topology_throughput` (
-  `timestamp` int(11) NOT NULL,
-  `component_id` varchar(255) NOT NULL,
-  `task_id` int(11) NOT NULL,
-  `throughput` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
