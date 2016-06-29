@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <parameters>
-	<!--The command to execute--!>
-		PLAY: This command generates a stream according to following parameters and plays it
-		RECORD: This command generates a stream according to following parameters and stores it in the specified database
-		REPLAY: This command plays a stream that has already been registered in the database
+	<!--The command to execute
+		PLAY: This command generates a stream according to following parameters and plays it.
+		RECORD: This command generates a stream according to following parameters and stores it in the specified database.
+		REPLAY: This command plays a stream that has already been registered in the database. Note that stream port, type and interval defined in this file will not be considered.
 	-->
-	<command>PLAY</command>
+	<command>REPLAY</command>
 	<!--The host of the database to store and replay streams-->
 	<db_host>localhost</db_host>
 	<!--The username of the database to store and replay streams-->
@@ -13,7 +13,7 @@
 	<!--The password of the database to store and replay streams-->
 	<db_password></db_password>
 	<!--The name of the stream to play-->
-	<stream_name>temperature</stream_name>
+	<stream_name>student</stream_name>
 	<!--The port to emit the stream, make sure it is declared in the configuration file of the rmi server-->
 	<stream_port>5354</stream_port>
 	<!--The variation to apply on the stream
@@ -27,7 +27,7 @@
 		8. All input rate variations (All types);
 		9. No input rate variation
 	-->
-	<stream_type>1</stream_type>
+	<stream_type>2</stream_type>
 	<!--The interval of time, in seconds, between two logical timestamps-->
 	<interval>1</interval>
 </parameters>
