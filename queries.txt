@@ -1,0 +1,6 @@
+Extract the number of executors (ackers excluded) for each timestamp:
+
+SELECT B.timestamp, COUNT(B.component) AS nbExecutors
+FROM all_time_bolts_stats B, all_time_spouts_stats S
+WHERE B.timestamp = S.timestamp
+GROUP BY B.timestamp
