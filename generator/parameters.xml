@@ -13,7 +13,7 @@
 	<!--The password of the database to store and replay streams-->
 	<db_password></db_password>
 	<!--The name of the stream to play-->
-	<stream_name>temperature</stream_name>
+	<stream_name>temperature1</stream_name>
 	<!--The port to emit the stream, make sure it is declared in the configuration file of the rmi server-->
 	<stream_port>5354</stream_port>
 	<!--The variation to apply on the stream

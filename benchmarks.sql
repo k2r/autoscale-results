@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Serveur: localhost
--- Généré le : Ven 10 Juin 2016 à 13:59
--- Version du serveur: 5.1.53
--- Version de PHP: 5.3.4
+-- Client :  127.0.0.1
+-- Généré le :  Mar 05 Juillet 2016 à 14:52
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,15 +17,15 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `benchmarks`
+-- Base de données :  `benchmarks`
 --
+CREATE DATABASE IF NOT EXISTS `benchmarks` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `benchmarks`;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `all_time_bolts_stats`
---
--- Création: Mar 07 Juin 2016 à 15:22
 --
 
 CREATE TABLE IF NOT EXISTS `all_time_bolts_stats` (
@@ -47,8 +48,6 @@ CREATE TABLE IF NOT EXISTS `all_time_bolts_stats` (
 --
 -- Structure de la table `all_time_spouts_stats`
 --
--- Création: Mar 07 Juin 2016 à 15:11
---
 
 CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
   `timestamp` int(11) NOT NULL,
@@ -70,8 +69,6 @@ CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
 --
 -- Structure de la table `results_diamond`
 --
--- Création: Mar 07 Juin 2016 à 15:07
---
 
 CREATE TABLE IF NOT EXISTS `results_diamond` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -88,8 +85,6 @@ CREATE TABLE IF NOT EXISTS `results_diamond` (
 --
 -- Structure de la table `results_linear`
 --
--- Création: Mar 07 Juin 2016 à 15:07
---
 
 CREATE TABLE IF NOT EXISTS `results_linear` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -99,14 +94,12 @@ CREATE TABLE IF NOT EXISTS `results_linear` (
   `longitude` double NOT NULL,
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7344 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `results_star`
---
--- Création: Mar 07 Juin 2016 à 15:07
 --
 
 CREATE TABLE IF NOT EXISTS `results_star` (
@@ -118,3 +111,19 @@ CREATE TABLE IF NOT EXISTS `results_star` (
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `topologies_status`
+--
+
+CREATE TABLE IF NOT EXISTS `topologies_status` (
+  `timestamp` int(11) NOT NULL,
+  `topology` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
