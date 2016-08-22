@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 05 Juillet 2016 à 14:52
+-- Généré le :  Dim 21 Août 2016 à 19:02
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `benchmarks`
 --
-CREATE DATABASE IF NOT EXISTS `benchmarks` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `benchmarks`;
 
 -- --------------------------------------------------------
 
@@ -36,8 +34,10 @@ CREATE TABLE IF NOT EXISTS `all_time_bolts_stats` (
   `component` varchar(255) NOT NULL,
   `start_task` int(11) NOT NULL,
   `end_task` int(11) NOT NULL,
-  `executed` int(11) NOT NULL,
-  `outputs` int(11) NOT NULL,
+  `total_executed` int(11) NOT NULL,
+  `update_executed` int(11) NOT NULL,
+  `total_outputs` int(11) NOT NULL,
+  `update_outputs` int(11) NOT NULL,
   `execute_ms_avg` double NOT NULL,
   `selectivity` double NOT NULL,
   PRIMARY KEY (`timestamp`,`host`,`port`,`topology`,`component`,`start_task`,`end_task`)
@@ -57,12 +57,31 @@ CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
   `component` varchar(255) NOT NULL,
   `start_task` int(11) NOT NULL,
   `end_task` int(11) NOT NULL,
-  `outputs` int(11) NOT NULL,
-  `throughput` int(11) NOT NULL,
-  `losses` int(11) NOT NULL,
+  `total_outputs` int(11) NOT NULL,
+  `update_outputs` int(11) NOT NULL,
+  `total_throughput` int(11) NOT NULL,
+  `update_throughput` int(11) NOT NULL,
+  `total_losses` int(11) NOT NULL,
+  `update_losses` int(11) NOT NULL,
   `complete_ms_avg` double NOT NULL,
   PRIMARY KEY (`timestamp`,`host`,`port`,`topology`,`component`,`start_task`,`end_task`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `operators_epr`
+--
+
+CREATE TABLE IF NOT EXISTS `operators_epr` (
+  `timestamp` int(11) NOT NULL,
+  `topology` varchar(63) NOT NULL,
+  `component` varchar(63) NOT NULL,
+  `epr` double NOT NULL,
+  `remaining_tuples` int(11) NOT NULL,
+  `processing_rate` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`topology`,`component`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -94,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `results_linear` (
   `longitude` double NOT NULL,
   `temperature` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69330 ;
 
 -- --------------------------------------------------------
 
