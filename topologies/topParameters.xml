@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <parameters>
 	<!--Identifier of the topology-->
-	<topology_id>heatwave</topology_id>
+	<topology_id>radar</topology_id>
 	
 	<!--Port to receive source stream-->
-	<stream_port>5354</stream_port>
+	<stream_port>5360</stream_port>
 	
 	<!--Host (name or IPv4 address) of the stream source-->
 	<stream_host>localhost</stream_host>
