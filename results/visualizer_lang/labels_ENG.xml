@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<labels>
+	<titles>
+		<input>Input stream</input>
+		<throughput>Throughput</throughput>
+		<dephase>Out of time items</dephase>
+		<latency>Average latencies of topologies</latency>
+		<nb_executor>Number of executors</nb_executor>
+		<nb_supervisor>Number of Supervisors</nb_supervisor>
+		<nb_worker>Number of workers</nb_worker>
+		<status>Statuses of topologies</status>
+		<traffic>Network traffic</traffic>
+		<rebalancing>Modifications of parallelism degrees</rebalancing>
+		<load>Average load of the topology</load>
+		<bolt_input>Input stream of bolt</bolt_input>
+		<bolt_exec>Processed items by bolt</bolt_exec>
+		<bolt_output>Throughput of bolt</bolt_output>
+		<bolt_latency>Average latency of bolt</bolt_latency>
+		<bolt_capacity>Processing capacity of bolt</bolt_capacity>
+		<bolt_activity>Activity level of bolt</bolt_activity>
+		<bolt_load>Load of bolt</bolt_load>
+	</titles>
+
+	<xaxis>
+		<input>timestamp (in s)</input>
+		<throughput>timestamp (in s)</throughput>
+		<dephase>timestamp (in s)</dephase>
+		<latency>timestamp (in s)</latency>
+		<nb_executor>timestamp (in s)</nb_executor>
+		<nb_supervisor>timestamp (in s)</nb_supervisor>
+		<nb_worker>timestamp (in s)</nb_worker>
+		<status>timestamp (in s)</status>
+		<traffic>timestamp (in s)</traffic>
+		<rebalancing>timestamp (in s)</rebalancing>
+		<load>timestamp (in s)</load>
+		<bolt_input>timestamp (in s)</bolt_input>
+		<bolt_exec>timestamp (in s)</bolt_exec>
+		<bolt_output>timestamp (in s)</bolt_output>
+		<bolt_latency>timestamp (in s)</bolt_latency>
+		<bolt_capacity>timestamp (in s)</bolt_capacity>
+		<bolt_activity>timestamp (in s)</bolt_activity>
+		<bolt_load>timestamp (in s)</bolt_load>
+	</xaxis>
+
+	<yaxis>
+		<input>Number of received items</input>
+		<throughput>Number of emitted items</throughput>
+		<dephase>Number of items out of time</dephase>
+		<latency>Average latency (in ms)</latency>
+		<nb_executor>Number of executors</nb_executor>
+		<nb_supervisor>Number of Supervisors</nb_supervisor>
+		<nb_worker>Number of workers</nb_worker>
+		<status>Status</status>
+		<traffic>Network traffic (in item)</traffic>
+		<rebalancing>Number of executors</rebalancing>
+		<load>Load</load>
+		<bolt_input>Number of items</bolt_input>
+		<bolt_exec>Number of items</bolt_exec>
+		<bolt_output>Number of items</bolt_output>
+		<bolt_latency>Average latency (in ms/item)</bolt_latency>
+		<bolt_capacity>Average capacity (in item/s)</bolt_capacity>
+		<bolt_activity>Activity level</bolt_activity>
+		<bolt_load>Load</bolt_load>
+	</yaxis>
+</labels>

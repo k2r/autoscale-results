@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<parameters>
+	<!--Two possible commands:
+		ANALYZE : it retrieves monitoring from the database for the given topology1
+		COMPARE : after the analysis of two topologies, it creates comparison charts between topologies 1 and 3 and duplicate datasets
+	-->
+	<command>ANALYZE</command>
+	<!--Name of the topology to visualize-->
+	<topology>DefaultExpt_S</topology>
+	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
+	<stream_type>8</stream_type>
+	
+	<!--Structure of the topology to compute values like network traffic-->
+	
+	<!-- Uncomment for linear topology -->
+	<!--
+	<edges>
+		<edge source="source" destination="intermediate"></edge>
+		<edge source="intermediate" destination="sink"></edge>
+	</edges>
+	-->
+	
+	<!-- Uncomment for star topology -->
+	
+	<edges>
+		<edge source="sourceLyon" destination="intermediate"></edge>
+		<edge source="sourceVilleurbanne" destination="intermediate"></edge>
+		<edge source="sourceVaulx" destination="intermediate"></edge>
+		<edge source="intermediate" destination="sinkLyon"></edge>
+		<edge source="intermediate" destination="sinkVilleurbanne"></edge>
+		<edge source="intermediate" destination="sinkVaulx"></edge>
+	</edges>
+	
+	
+	<!-- Uncomment for diamond topology -->
+	<!--
+	<edges>
+		<edge source="source" destination="intermediateLyon"></edge>
+		<edge source="source" destination="intermediateVaulx"></edge>
+		<edge source="source" destination="intermediateVilleurbanne"></edge>
+		<edge source="intermediateLyon" destination="sink"></edge>
+		<edge source="intermediateVaulx" destination="sink"></edge>
+		<edge source="intermediateVilleurbanne" destination="sink"></edge>
+	</edges>
+	-->
+	
+	<!-- Uncomment for advertising topology -->
+	<!--
+	<edges>
+		<edge source="source" destination="deserialize"></edge>
+		<edge source="deserialize" destination="eventFilter"></edge>
+		<edge source="eventFilter" destination="addressProjection"></edge>
+		<edge source="addressProjection" destination="ipProcessor"></edge>
+		<edge source="eventFilter" destination="eventProjection"></edge>
+		<edge source="eventProjection" destination="campaignJoin"></edge>
+		<edge source="campaignJoin" destination="campaignProcessor"></edge>
+	</edges>
+	-->
+	<!--To fulfill only for comparison with topology1-->
+	<topology>AutoscaleMin_L</topology>
+	<stream_type>8</stream_type>
+	
+	<!--Parameters to get a connection to the monitoring database-->
+	<db_host>localhost</db_host>
+	<db_name>autoscale</db_name>
+	<db_user>root</db_user>
+	<db_password></db_password>
+	
+	<!--Language parameter(ENG/FR)-->
+	<language>ENG</language>
+	
+	<!--Charts customization-->
+	<draw_shapes>true</draw_shapes>
+	<draw_lines>true</draw_lines>
+	<width>640</width>
+	<height>480</height>
+	<font>Dialog</font>
+	<title_fontsize>28</title_fontsize>
+	<axis_fontsize>24</axis_fontsize>
+	<legend_fontsize>14</legend_fontsize>
+</parameters>

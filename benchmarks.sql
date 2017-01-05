@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 21 Août 2016 à 19:02
+-- Généré le :  Mer 05 Octobre 2016 à 14:51
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -70,66 +70,48 @@ CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `operators_epr`
+-- Structure de la table `operators_activity`
 --
 
-CREATE TABLE IF NOT EXISTS `operators_epr` (
+CREATE TABLE IF NOT EXISTS `operators_activity` (
   `timestamp` int(11) NOT NULL,
   `topology` varchar(63) NOT NULL,
   `component` varchar(63) NOT NULL,
-  `epr` double NOT NULL,
+  `activity_level` double NOT NULL,
   `remaining_tuples` int(11) NOT NULL,
-  `processing_rate` double NOT NULL,
+  `capacity_per_second` double NOT NULL,
   PRIMARY KEY (`timestamp`,`topology`,`component`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `results_diamond`
+-- Structure de la table `operators_loads`
 --
 
-CREATE TABLE IF NOT EXISTS `results_diamond` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `city` varchar(255) NOT NULL,
-  `zipCode` int(11) NOT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL,
-  `temperature` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `operators_loads` (
+  `timestamp` int(11) NOT NULL,
+  `topology` varchar(255) NOT NULL,
+  `component` varchar(255) NOT NULL,
+  `processing_ratio` double NOT NULL,
+  `current_load` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`topology`,`component`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `results_linear`
+-- Structure de la table `scales`
 --
 
-CREATE TABLE IF NOT EXISTS `results_linear` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `city` varchar(255) NOT NULL,
-  `zipCode` int(11) NOT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL,
-  `temperature` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=69330 ;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `results_star`
---
-
-CREATE TABLE IF NOT EXISTS `results_star` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `city` varchar(255) NOT NULL,
-  `zipCode` int(11) NOT NULL,
-  `latitude` double NOT NULL,
-  `longitude` double NOT NULL,
-  `temperature` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `scales` (
+  `timestamp` int(11) NOT NULL,
+  `component` varchar(255) NOT NULL,
+  `action` varchar(255) NOT NULL,
+  `current_parallelism` int(11) NOT NULL,
+  `new_parallelism` int(11) NOT NULL,
+  PRIMARY KEY (`timestamp`,`component`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 

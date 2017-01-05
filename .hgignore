@@ -1,6 +1,0 @@
-syntax: glob
-topologies/starTopology.jar
-topologies/linearTopology.jar
-topologies/diamondTopology.jar
-generator/StreamSim-0.0.1-SNAPSHOT-java7.jar
-generator/streamsim-java7.jar

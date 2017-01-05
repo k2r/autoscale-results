@@ -12,11 +12,14 @@
 	<!--Initial number of tasks per component (per default, 1)-->
 	<nb_tasks>8</nb_tasks>
 	
-	<!--Initial number of executors per component (per default, 1 per task)-->
-	<nb_executors>1</nb_executors>
+	<!--Initial number of executors per component intermediate (per default, 1 per task)-->
+	<intermediate_nb_executors>1</intermediate_nb_executors>
+	
+	<!--Initial number of executors per component sink (per default, 1 per task)-->
+	<sink_nb_executors>1</sink_nb_executors>
 	
 	<!--If a database is used by one or many operators-->
-	<database_host>localhost</database_host>
+	<state_host>127.0.0.1</state_host>
 	
 	<!--If one or many stateful operators are used-->
 	<window_size>10</window_size>

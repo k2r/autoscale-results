@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<labels>
+	<titles>
+		<input>Flux d'entrée</input>
+		<throughput>Débit en sortie</throughput>
+		<dephase>N-uplets déphasés</dephase>
+		<latency>Latences des topologies</latency>
+		<nb_executor>Nombre d'executors</nb_executor>
+		<nb_supervisor>Nombre de Supervisors</nb_supervisor>
+		<nb_worker>Nombre de workers</nb_worker>
+		<status>État de la topologie</status>
+		<traffic>Trafic réseau</traffic>
+		<rebalancing>Modification des degrés de parallélisme</rebalancing>
+		<load>Charge moyenne de la topologie</load>
+		<bolt_input>Flux d'entrée du bolt</bolt_input>
+		<bolt_exec>N-uplets traités par le bolt</bolt_exec>
+		<bolt_output>Flux en sortie du bolt</bolt_output>
+		<bolt_latency>Latence du bolt</bolt_latency>
+		<bolt_capacity>Capacité de traitement du bolt</bolt_capacity>
+		<bolt_activity>Niveau d'activité du bolt</bolt_activity>
+		<bolt_load>Charge du bolt</bolt_load>
+	</titles>
+
+	<xaxis>
+		<input>timestamp (en s)</input>
+		<throughput>timestamp (en s)</throughput>
+		<dephase>timestamp (en s)</dephase>
+		<latency>timestamp (en s)</latency>
+		<nb_executor>timestamp (en s)</nb_executor>
+		<nb_supervisor>timestamp (en s)</nb_supervisor>
+		<nb_worker>timestamp (en s)</nb_worker>
+		<status>timestamp (en s)</status>
+		<traffic>timestamp (en s)</traffic>
+		<rebalancing>timestamp (en s)</rebalancing>
+		<load>timestamp (en s)</load>
+		<bolt_input>timestamp (en s)</bolt_input>
+		<bolt_exec>timestamp (en s)</bolt_exec>
+		<bolt_output>timestamp (en s)</bolt_output>
+		<bolt_latency>timestamp (en s)</bolt_latency>
+		<bolt_activity>timestamp (en s)</bolt_activity>
+		<bolt_capacity>timestamp (en s)</bolt_capacity>
+		<bolt_load>timestamp (en s)</bolt_load>
+	</xaxis>
+
+	<yaxis>
+		<input>Nombre de n-uplets reçus</input>
+		<throughput>Nombre de n-uplets émis</throughput>
+		<dephase>Nombre de n-uplets déphasés</dephase>
+		<latency>Latence moyenne par n-uplet (en ms)</latency>
+		<nb_executor>Nombre d'executors</nb_executor>
+		<nb_supervisor>Nombre de Supervisors</nb_supervisor>
+		<nb_worker>Nombre de workers</nb_worker>
+		<status>État</status>
+		<traffic>Trafic (en n-uplets)</traffic>
+		<rebalancing>Nombre d'executors</rebalancing>
+		<load>Charge</load>
+		<bolt_input>Nombre de n-uplets</bolt_input>
+		<bolt_exec>Nombre de n-uplets</bolt_exec>
+		<bolt_output>Nombre de n-uplets</bolt_output>
+		<bolt_latency>Latence moyenne par n-uplet (en ms)</bolt_latency>
+		<bolt_capacity>Capacité moyenne (en n-uplets/s)</bolt_capacity>
+		<bolt_activity>Niveau d'activité</bolt_activity>
+		<bolt_load>Charge</bolt_load>
+	</yaxis>
+</labels>
