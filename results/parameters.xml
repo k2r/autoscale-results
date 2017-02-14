@@ -6,12 +6,15 @@
 	-->
 	<command>ANALYZE</command>
 	<!--Name of the topology to visualize-->
-	<topology>DefaultExpt_S</topology>
+	<topology>primeFactorizer</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
-	<stream_type>8</stream_type>
+	<stream_type>9</stream_type>
 	
 	<!--Structure of the topology to compute values like network traffic-->
 	
+	<edges>
+		<edge source="valGenerator" destination="primeFactorizer"></edge>
+	</edges>
 	<!-- Uncomment for linear topology -->
 	<!--
 	<edges>
@@ -21,7 +24,7 @@
 	-->
 	
 	<!-- Uncomment for star topology -->
-	
+	<!--
 	<edges>
 		<edge source="sourceLyon" destination="intermediate"></edge>
 		<edge source="sourceVilleurbanne" destination="intermediate"></edge>
@@ -30,7 +33,7 @@
 		<edge source="intermediate" destination="sinkVilleurbanne"></edge>
 		<edge source="intermediate" destination="sinkVaulx"></edge>
 	</edges>
-	
+	-->
 	
 	<!-- Uncomment for diamond topology -->
 	<!--
