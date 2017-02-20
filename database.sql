@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 05 Octobre 2016 à 14:51
+-- Généré le :  Mer 15 Février 2017 à 14:56
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `benchmarks`
+-- Base de données :  `autoscale`
 --
 
 -- --------------------------------------------------------
@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `all_time_bolts_stats` (
   `update_outputs` int(11) NOT NULL,
   `execute_ms_avg` double NOT NULL,
   `selectivity` double NOT NULL,
+  `cpu_usage` double NOT NULL,
   PRIMARY KEY (`timestamp`,`host`,`port`,`topology`,`component`,`start_task`,`end_task`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -80,21 +81,7 @@ CREATE TABLE IF NOT EXISTS `operators_activity` (
   `activity_level` double NOT NULL,
   `remaining_tuples` int(11) NOT NULL,
   `capacity_per_second` double NOT NULL,
-  PRIMARY KEY (`timestamp`,`topology`,`component`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `operators_loads`
---
-
-CREATE TABLE IF NOT EXISTS `operators_loads` (
-  `timestamp` int(11) NOT NULL,
-  `topology` varchar(255) NOT NULL,
-  `component` varchar(255) NOT NULL,
-  `processing_ratio` double NOT NULL,
-  `current_load` double NOT NULL,
+  `estimated_load` double NOT NULL,
   PRIMARY KEY (`timestamp`,`topology`,`component`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
