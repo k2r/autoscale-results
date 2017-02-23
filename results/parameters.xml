@@ -6,15 +6,25 @@
 	-->
 	<command>ANALYZE</command>
 	<!--Name of the topology to visualize-->
-	<topology>primeFactorizer</topology>
+	<topology>rstorm-shuffle</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
 	<!--Structure of the topology to compute values like network traffic-->
 	
+	<!-- Uncomment for prime factor topology -->
+	<!--
 	<edges>
 		<edge source="valGenerator" destination="primeFactorizer"></edge>
 	</edges>
+	-->
+	
+	<!-- Uncomment for OSG test topology -->
+	
+	<edges>
+		<edge source="zipIntegerGenerator" destination="keySensitiveBolt"></edge>
+	</edges>
+	
 	<!-- Uncomment for linear topology -->
 	<!--
 	<edges>
@@ -60,8 +70,11 @@
 	</edges>
 	-->
 	<!--To fulfill only for comparison with topology1-->
-	<topology>AutoscaleMin_L</topology>
-	<stream_type>8</stream_type>
+	<topology>autoscale-shuffle</topology>
+	<stream_type>9</stream_type>
+	
+	<topology>autoscale-osg</topology>
+	<stream_type>9</stream_type>
 	
 	<!--Parameters to get a connection to the monitoring database-->
 	<db_host>localhost</db_host>

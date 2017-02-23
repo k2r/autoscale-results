@@ -19,9 +19,9 @@
 		<bolt_latency>Average latency of bolt</bolt_latency>
 		<bolt_capacity>Processing capacity of bolt</bolt_capacity>
 		<bolt_activity>Activity level of bolt</bolt_activity>
-		<bolt_load>Load of bolt</bolt_load>
+		<bolt_cpu>CPU usage of bolt</bolt_cpu>
 	</titles>
-
+	
 	<xaxis>
 		<input>timestamp (in s)</input>
 		<throughput>timestamp (in s)</throughput>
@@ -40,9 +40,9 @@
 		<bolt_latency>timestamp (in s)</bolt_latency>
 		<bolt_capacity>timestamp (in s)</bolt_capacity>
 		<bolt_activity>timestamp (in s)</bolt_activity>
-		<bolt_load>timestamp (in s)</bolt_load>
+		<bolt_cpu>timestamp (in s)</bolt_cpu>
 	</xaxis>
-
+	
 	<yaxis>
 		<input>Number of received items</input>
 		<throughput>Number of emitted items</throughput>
@@ -61,6 +61,6 @@
 		<bolt_latency>Average latency (in ms/item)</bolt_latency>
 		<bolt_capacity>Average capacity (in item/s)</bolt_capacity>
 		<bolt_activity>Activity level</bolt_activity>
-		<bolt_load>Load</bolt_load>
+		<bolt_cpu>Cumulative CPU usage (%)</bolt_cpu>
 	</yaxis>
 </labels>
