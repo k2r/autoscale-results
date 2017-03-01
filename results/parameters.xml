@@ -4,9 +4,9 @@
 		ANALYZE : it retrieves monitoring from the database for the given topology1
 		COMPARE : after the analysis of two topologies, it creates comparison charts between topologies 1 and 3 and duplicate datasets
 	-->
-	<command>COMPARE</command>
+	<command>ANALYZE</command>
 	<!--Name of the topology to visualize-->
-	<topology>autoscale-osg</topology>
+	<topology>rstorm_shuffle</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
@@ -22,7 +22,7 @@
 	<!-- Uncomment for OSG test topology -->
 	
 	<edges>
-		<edge source="zipIntegerGenerator" destination="keySensitiveBolt"></edge>
+		<edge source="streamsimSpout" destination="keySensitiveBolt"></edge>
 	</edges>
 	
 	<!-- Uncomment for linear topology -->
