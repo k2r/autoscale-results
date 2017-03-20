@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 15 Février 2017 à 14:56
+-- Généré le :  Jeu 16 Mars 2017 à 21:56
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `autoscale`
+-- Base de données :  `autoscale_test`
 --
 
 -- --------------------------------------------------------
@@ -84,6 +84,22 @@ CREATE TABLE IF NOT EXISTS `operators_activity` (
   `estimated_load` double NOT NULL,
   PRIMARY KEY (`timestamp`,`topology`,`component`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `operators_constraints`
+--
+
+CREATE TABLE IF NOT EXISTS `operators_constraints` (
+  `timestamp` int(20) NOT NULL,
+  `topology` varchar(255) NOT NULL,
+  `component` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `cpu` double NOT NULL,
+  `memory` double NOT NULL,
+  PRIMARY KEY (`timestamp`,`topology`,`component`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 

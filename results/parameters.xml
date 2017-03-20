@@ -6,7 +6,7 @@
 	-->
 	<command>ANALYZE</command>
 	<!--Name of the topology to visualize-->
-	<topology>rstorm_shuffle</topology>
+	<topology>autoscale3</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
@@ -20,18 +20,18 @@
 	-->
 	
 	<!-- Uncomment for OSG test topology -->
-	
+	<!--
 	<edges>
 		<edge source="streamsimSpout" destination="keySensitiveBolt"></edge>
 	</edges>
-	
+	-->
 	<!-- Uncomment for linear topology -->
-	<!--
+	
 	<edges>
 		<edge source="source" destination="intermediate"></edge>
 		<edge source="intermediate" destination="sink"></edge>
 	</edges>
-	-->
+	
 	
 	<!-- Uncomment for star topology -->
 	<!--

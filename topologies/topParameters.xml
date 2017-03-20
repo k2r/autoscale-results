@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <parameters>
 	<!--Identifier of the topology-->
-	<topology_id>radar</topology_id>
+	<topology_id>linear</topology_id>
 	
 	<!--Port to receive source stream-->
 	<stream_port>5354</stream_port>
@@ -17,6 +17,18 @@
 	
 	<!--Initial number of executors per component sink (per default, 1 per task)-->
 	<sink_nb_executors>1</sink_nb_executors>
+	
+	<!--Initial CPU requirement for component intermediate-->
+	<intermediate_cpu_constraint>20.0</intermediate_cpu_constraint>
+	
+	<!--Initial CPU requirement for component sink-->
+	<sink_cpu_constraint>40.0</sink_cpu_constraint>
+	
+	<!--Initial memory requirement for component intermediate-->
+	<intermediate_mem_constraint>128.0</intermediate_mem_constraint>
+	
+	<!--Initial memory requirement for component sink-->
+	<sink_mem_constraint>256.0</sink_mem_constraint>
 	
 	<!--If a database is used by one or many operators-->
 	<state_host>127.0.0.1</state_host>
