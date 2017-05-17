@@ -70,13 +70,7 @@
 	</edges>
 	-->
 	<!--To fulfill only for comparison with topology1-->
-	<topology>autoscale-shuffle</topology>
-	<stream_type>9</stream_type>
-	
-	<topology>rstorm-osg</topology>
-	<stream_type>9</stream_type>
-	
-	<topology>rstorm-shuffle</topology>
+	<topology>autoscale3-OS</topology>
 	<stream_type>9</stream_type>
 	
 	<!--Parameters to get a connection to the monitoring database-->

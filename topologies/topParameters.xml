@@ -22,13 +22,19 @@
 	<intermediate_cpu_constraint>20.0</intermediate_cpu_constraint>
 	
 	<!--Initial CPU requirement for component sink-->
-	<sink_cpu_constraint>40.0</sink_cpu_constraint>
+	<sink_cpu_constraint>50.0</sink_cpu_constraint>
 	
 	<!--Initial memory requirement for component intermediate-->
 	<intermediate_mem_constraint>128.0</intermediate_mem_constraint>
 	
 	<!--Initial memory requirement for component sink-->
-	<sink_mem_constraint>256.0</sink_mem_constraint>
+	<sink_mem_constraint>512.0</sink_mem_constraint>
+	
+	<!--Number of meta-bolt dedicated to ack-->
+	<nb_ackers>8</nb_ackers>
+	
+	<!--Initial number of assignable workers-->
+	<nb_workers>24</nb_workers>
 	
 	<!--If a database is used by one or many operators-->
 	<state_host>127.0.0.1</state_host>
