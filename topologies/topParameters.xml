@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <parameters>
 	<!--Identifier of the topology-->
-	<topology_id>linear</topology_id>
+	<topology_id>opinion-mine</topology_id>
 	
 	<!--Port to receive source stream-->
 	<stream_port>5354</stream_port>
