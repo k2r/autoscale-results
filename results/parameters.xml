@@ -6,7 +6,7 @@
 	-->
 	<command>ANALYZE</command>
 	<!--Name of the topology to visualize-->
-	<topology>autoscale3</topology>
+	<topology>Default_Std_Min</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
@@ -26,12 +26,12 @@
 	</edges>
 	-->
 	<!-- Uncomment for linear topology -->
-	
+	<!--
 	<edges>
 		<edge source="source" destination="intermediate"></edge>
 		<edge source="intermediate" destination="sink"></edge>
 	</edges>
-	
+	-->
 	
 	<!-- Uncomment for star topology -->
 	<!--
@@ -69,6 +69,19 @@
 		<edge source="campaignJoin" destination="campaignProcessor"></edge>
 	</edges>
 	-->
+	
+	<!-- Uncomment for opinion-mining topology -->
+	
+	<edges>
+		<edge source="OpinionSource" destination="CategoryDispatcher"></edge>
+		<edge source="CategoryDispatcher" destination="AgeNormalizer"></edge>
+		<edge source="CategoryDispatcher" destination="CityNormalizer"></edge>
+		<edge source="AgeNormalizer" destination="AgeAnalyzer"></edge>
+		<edge source="CityNormalizer" destination="CityAnalyzer"></edge>
+		<edge source="AgeAnalyzer" destination="OpinionAnalyzer"></edge>
+		<edge source="CityAnalyzer" destination="OpinionAnalyzer"></edge>
+	</edges>
+	
 	<!--To fulfill only for comparison with topology1-->
 	<topology>autoscale3-OS</topology>
 	<stream_type>9</stream_type>
@@ -90,5 +103,5 @@
 	<font>Dialog</font>
 	<title_fontsize>28</title_fontsize>
 	<axis_fontsize>24</axis_fontsize>
-	<legend_fontsize>14</legend_fontsize>
+	<legend_fontsize>18</legend_fontsize>
 </parameters>

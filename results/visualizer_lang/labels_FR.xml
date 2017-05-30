@@ -19,6 +19,7 @@
 		<bolt_capacity>Capacité de traitement du bolt</bolt_capacity>
 		<bolt_activity>Niveau d'activité du bolt</bolt_activity>
 		<bolt_cpu>Usage CPU du bolt</bolt_cpu>
+		<bolt_rebalancing>Modification du degré de parallélisme</bolt_rebalancing>
 	</titles>
 	
 	<xaxis>
@@ -39,6 +40,7 @@
 		<bolt_activity>timestamp (en s)</bolt_activity>
 		<bolt_capacity>timestamp (en s)</bolt_capacity>
 		<bolt_cpu>timestamp (en s)</bolt_cpu>
+		<bolt_rebalancing>timestamp (en s)</bolt_rebalancing>
 	</xaxis>
 	
 	<yaxis>
@@ -59,5 +61,6 @@
 		<bolt_capacity>Capacité moyenne (en n-uplets/s)</bolt_capacity>
 		<bolt_activity>Niveau d'activité</bolt_activity>
 		<bolt_cpu>Usage CPU cumulé (en %)</bolt_cpu>
+		<bolt_rebalancing>Nombre d'executors</bolt_rebalancing>
 	</yaxis>
 </labels>

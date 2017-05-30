@@ -20,6 +20,7 @@
 		<bolt_capacity>Processing capacity of bolt</bolt_capacity>
 		<bolt_activity>Activity level of bolt</bolt_activity>
 		<bolt_cpu>CPU usage of bolt</bolt_cpu>
+		<bolt_rebalancing>Modifications of parallelism degree</bolt_rebalancing>
 	</titles>
 	
 	<xaxis>
@@ -41,6 +42,7 @@
 		<bolt_capacity>timestamp (in s)</bolt_capacity>
 		<bolt_activity>timestamp (in s)</bolt_activity>
 		<bolt_cpu>timestamp (in s)</bolt_cpu>
+		<bolt_rebalancing>timestamp (in s)</bolt_rebalancing>
 	</xaxis>
 	
 	<yaxis>
@@ -62,5 +64,6 @@
 		<bolt_capacity>Average capacity (in item/s)</bolt_capacity>
 		<bolt_activity>Activity level</bolt_activity>
 		<bolt_cpu>Cumulative CPU usage (%)</bolt_cpu>
+		<bolt_rebalancing>Number of executors</bolt_rebalancing>
 	</yaxis>
 </labels>
