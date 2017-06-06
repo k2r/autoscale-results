@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <parameters>
 	<!--Identifier of the topology-->
-	<topology_id>opinion-mine</topology_id>
+	<topology_id>advertising</topology_id>
 	
 	<!--Port to receive source stream-->
 	<stream_port>5354</stream_port>
 	
 	<!--Host (name or IPv4 address) of the stream source-->
-	<stream_host>localhost</stream_host>
+	<stream_host>master.novalocal</stream_host>
 	
 	<!--Initial number of tasks per component (per default, 1)-->
-	<nb_tasks>8</nb_tasks>
+	<nb_tasks>10</nb_tasks>
 	
 	<!--Initial number of executors per component intermediate (per default, 1 per task)-->
 	<intermediate_nb_executors>1</intermediate_nb_executors>
@@ -19,10 +19,10 @@
 	<sink_nb_executors>1</sink_nb_executors>
 	
 	<!--Initial CPU requirement for component intermediate-->
-	<intermediate_cpu_constraint>20.0</intermediate_cpu_constraint>
+	<intermediate_cpu_constraint>10.0</intermediate_cpu_constraint>
 	
 	<!--Initial CPU requirement for component sink-->
-	<sink_cpu_constraint>50.0</sink_cpu_constraint>
+	<sink_cpu_constraint>30.0</sink_cpu_constraint>
 	
 	<!--Initial memory requirement for component intermediate-->
 	<intermediate_mem_constraint>128.0</intermediate_mem_constraint>
@@ -37,7 +37,7 @@
 	<nb_workers>24</nb_workers>
 	
 	<!--If a database is used by one or many operators-->
-	<state_host>127.0.0.1</state_host>
+	<state_host>master.novalocal</state_host>
 	
 	<!--If one or many stateful operators are used-->
 	<window_size>10</window_size>

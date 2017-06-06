@@ -4,9 +4,9 @@
 		ANALYZE : it retrieves monitoring from the database for the given topology1
 		COMPARE : after the analysis of two topologies, it creates comparison charts between topologies 1 and 3 and duplicate datasets
 	-->
-	<command>ANALYZE</command>
+	<command>COMPARE</command>
 	<!--Name of the topology to visualize-->
-	<topology>Default_Std_Min</topology>
+	<topology>Autoscale_Min_001</topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
@@ -83,7 +83,10 @@
 	</edges>
 	
 	<!--To fulfill only for comparison with topology1-->
-	<topology>autoscale3-OS</topology>
+	<topology>Autoscale_Min_010</topology>
+	<stream_type>9</stream_type>
+	
+	<topology>Autoscale_Min_030</topology>
 	<stream_type>9</stream_type>
 	
 	<!--Parameters to get a connection to the monitoring database-->
