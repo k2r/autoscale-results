@@ -4,23 +4,24 @@
 	<titles>
 		<input>Input stream</input>
 		<throughput>Throughput</throughput>
-		<dephase>Out of time items</dephase>
+		<dephase>Out-of-time tuples</dephase>
 		<latency>Average latencies of topologies</latency>
 		<nb_executor>Number of executors</nb_executor>
-		<nb_supervisor>Number of Supervisors</nb_supervisor>
+		<nb_supervisor>Number of supervisors</nb_supervisor>
 		<nb_worker>Number of workers</nb_worker>
 		<status>Statuses of topologies</status>
 		<traffic>Network traffic</traffic>
 		<rebalancing>Modifications of parallelism degrees</rebalancing>
 		<load>Average load of the topology</load>
 		<bolt_input>Input stream of bolt</bolt_input>
-		<bolt_exec>Processed items by bolt</bolt_exec>
+		<bolt_exec>Processed tuples by bolt</bolt_exec>
 		<bolt_output>Throughput of bolt</bolt_output>
 		<bolt_latency>Average latency of bolt</bolt_latency>
 		<bolt_capacity>Processing capacity of bolt</bolt_capacity>
 		<bolt_activity>Activity level of bolt</bolt_activity>
 		<bolt_cpu>CPU usage of bolt</bolt_cpu>
-		<bolt_rebalancing>Modifications of parallelism degree</bolt_rebalancing>
+		<bolt_rebalancing>Modifications of parallelism degree of bolt</bolt_rebalancing>
+		<bolt_pending>Pending tuples of bolt</bolt_pending>
 	</titles>
 	
 	<xaxis>
@@ -43,27 +44,29 @@
 		<bolt_activity>timestamp (in s)</bolt_activity>
 		<bolt_cpu>timestamp (in s)</bolt_cpu>
 		<bolt_rebalancing>timestamp (in s)</bolt_rebalancing>
+		<bolt_pending>timestamp (in s)</bolt_pending>
 	</xaxis>
 	
 	<yaxis>
-		<input>Number of received items</input>
-		<throughput>Number of emitted items</throughput>
-		<dephase>Number of items out of time</dephase>
+		<input>Number of received tuples</input>
+		<throughput>Number of emitted tuples</throughput>
+		<dephase>Number of tuples</dephase>
 		<latency>Average latency (in ms)</latency>
 		<nb_executor>Number of executors</nb_executor>
-		<nb_supervisor>Number of Supervisors</nb_supervisor>
+		<nb_supervisor>Number of supervisors</nb_supervisor>
 		<nb_worker>Number of workers</nb_worker>
 		<status>Status</status>
-		<traffic>Network traffic (in item)</traffic>
+		<traffic>Network traffic (in tuples)</traffic>
 		<rebalancing>Number of executors</rebalancing>
 		<load>Load</load>
-		<bolt_input>Number of items</bolt_input>
-		<bolt_exec>Number of items</bolt_exec>
-		<bolt_output>Number of items</bolt_output>
-		<bolt_latency>Average latency (in ms/item)</bolt_latency>
-		<bolt_capacity>Average capacity (in item/s)</bolt_capacity>
+		<bolt_input>Number of tuples</bolt_input>
+		<bolt_exec>Number of tuples</bolt_exec>
+		<bolt_output>Number of tuples</bolt_output>
+		<bolt_latency>Average latency (in ms/tuple)</bolt_latency>
+		<bolt_capacity>Average capacity (in tuple/s)</bolt_capacity>
 		<bolt_activity>Activity level</bolt_activity>
 		<bolt_cpu>Cumulative CPU usage (%)</bolt_cpu>
 		<bolt_rebalancing>Number of executors</bolt_rebalancing>
+		<bolt_pending>Number of tuples</bolt_pending>
 	</yaxis>
 </labels>

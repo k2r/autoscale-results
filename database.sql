@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 11 Mai 2017 à 14:28
+-- Généré le :  Mer 05 Juillet 2017 à 15:13
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -71,23 +71,6 @@ CREATE TABLE IF NOT EXISTS `all_time_spouts_stats` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `operators_activity`
---
-
-CREATE TABLE IF NOT EXISTS `operators_activity` (
-  `timestamp` int(11) NOT NULL,
-  `topology` varchar(63) NOT NULL,
-  `component` varchar(63) NOT NULL,
-  `activity_level` double NOT NULL,
-  `remaining_tuples` int(11) NOT NULL,
-  `capacity_per_second` double NOT NULL,
-  `estimated_load` double NOT NULL,
-  PRIMARY KEY (`timestamp`,`topology`,`component`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `operators_constraints`
 --
 
@@ -129,11 +112,12 @@ CREATE TABLE IF NOT EXISTS `operators_estimation` (
 
 CREATE TABLE IF NOT EXISTS `scales` (
   `timestamp` int(11) NOT NULL,
+  `topology` varchar(255) NOT NULL,
   `component` varchar(255) NOT NULL,
   `action` varchar(255) NOT NULL,
   `current_parallelism` int(11) NOT NULL,
   `new_parallelism` int(11) NOT NULL,
-  PRIMARY KEY (`timestamp`,`component`)
+  PRIMARY KEY (`timestamp`,`topology`,`component`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
