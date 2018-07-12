@@ -20,6 +20,7 @@
 		<bolt_capacity>Processing capacity of bolt</bolt_capacity>
 		<bolt_activity>Activity level of bolt</bolt_activity>
 		<bolt_cpu>CPU usage of bolt</bolt_cpu>
+		<bolt_std_dev_cpu>Standard deviation of CPU usage for bolt</bolt_std_dev_cpu>
 		<bolt_rebalancing>Modifications of parallelism degree of bolt</bolt_rebalancing>
 		<bolt_pending>Pending tuples of bolt</bolt_pending>
 	</titles>
@@ -43,6 +44,7 @@
 		<bolt_capacity>timestamp (in s)</bolt_capacity>
 		<bolt_activity>timestamp (in s)</bolt_activity>
 		<bolt_cpu>timestamp (in s)</bolt_cpu>
+		<bolt_std_dev_cpu>timestamp (in s)</bolt_std_dev_cpu>
 		<bolt_rebalancing>timestamp (in s)</bolt_rebalancing>
 		<bolt_pending>timestamp (in s)</bolt_pending>
 	</xaxis>
@@ -66,6 +68,7 @@
 		<bolt_capacity>Average capacity (in tuple/s)</bolt_capacity>
 		<bolt_activity>Activity level</bolt_activity>
 		<bolt_cpu>Cumulative CPU usage (%)</bolt_cpu>
+		<bolt_std_dev_cpu>Standard deviation of CPU usage (%)</bolt_std_dev_cpu>
 		<bolt_rebalancing>Number of executors</bolt_rebalancing>
 		<bolt_pending>Number of tuples</bolt_pending>
 	</yaxis>

@@ -19,6 +19,7 @@
 		<bolt_capacity>Capacité de traitement du bolt</bolt_capacity>
 		<bolt_activity>Niveau d'activité du bolt</bolt_activity>
 		<bolt_cpu>Usage CPU du bolt</bolt_cpu>
+		<bolt_std_dev_cpu>Écart-type de l'usage CPU du bolt</bolt_std_dev_cpu>
 		<bolt_rebalancing>Modification du degré de parallélisme du bolt</bolt_rebalancing>
 		<bolt_pending>Tuples en file d'attente du bolt</bolt_pending>
 	</titles>
@@ -41,6 +42,7 @@
 		<bolt_activity>timestamp (en s)</bolt_activity>
 		<bolt_capacity>timestamp (en s)</bolt_capacity>
 		<bolt_cpu>timestamp (en s)</bolt_cpu>
+		<bolt_std_dev_cpu>timestamp (en s)</bolt_std_dev_cpu>
 		<bolt_rebalancing>timestamp (en s)</bolt_rebalancing>
 		<bolt_pending>timestamp (en s)</bolt_pending>
 	</xaxis>
@@ -63,6 +65,7 @@
 		<bolt_capacity>Capacité moyenne (en n-uplets/s)</bolt_capacity>
 		<bolt_activity>Niveau d'activité</bolt_activity>
 		<bolt_cpu>Usage CPU cumulé (en %)</bolt_cpu>
+		<bolt_std_dev_cpu>Écart-type (en %)</bolt_std_dev_cpu>
 		<bolt_rebalancing>Nombre d'executors</bolt_rebalancing>
 		<bolt_pending>Nombre de n-uplets</bolt_pending>
 	</yaxis>

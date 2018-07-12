@@ -6,11 +6,11 @@
 		COMPARE : after the analysis of at least two configurations of a topology, it creates comparison charts between topologies and duplicate datasets
 		COMPARE-MERGED : after extraction of merged data for two configurations, it creates comparison charts between topologies and duplicate min/avg/max datasets
 	-->
-	<command>MERGE</command>
+	<command>COMPARE-MERGED</command>
 	
 	<!--Name of the topology to visualize-->
-	<topology>S3_margin001_gain050_merge</topology>
-	<short_topology>s3m001g050_merge</short_topology>
+	<topology>uniform_autoscale_osg</topology>
+	<short_topology>uni_as_osg</short_topology>
 	<!--Type of stream variation (refer to StreamSim generator for type->variation code matching)-->
 	<stream_type>9</stream_type>
 	
@@ -89,14 +89,18 @@
 	
 	
 	<!--To fulfill only for comparison with  first topology-->
-	<topology>S3_margin010_gain050</topology>
-	<short_topology>s3m010g050</short_topology>
+	<topology>uniform_autoscale_shuffle</topology>
+	<short_topology>uni_as_shuffle</short_topology>
 	<stream_type>9</stream_type>
 	
-	<!--To fulfill only for comparison with  first topology-->
-	<topology>S3_margin030_gain050</topology>
-	<short_topology>s3m030g050</short_topology>
-	<stream_type>9</stream_type>
+	<!--To fulfill only for comparison with first topology-->
+	<!-- <topology>uniform_storm_osg</topology> -->
+	<!-- <short_topology>uni_storm_osg</short_topology> -->
+	<!-- <stream_type>9</stream_type> -->
+	
+	<!-- <topology>uniform_storm_shuffle</topology> -->
+	<!-- <short_topology>uni_storm_shuffle</short_topology> -->
+	<!-- <stream_type>9</stream_type> -->
 	
 	<!--Parameters to get a connection to the monitoring database-->
 	<db_host>localhost</db_host>
@@ -115,5 +119,10 @@
 	<font>Dialog</font>
 	<title_fontsize>28</title_fontsize>
 	<axis_fontsize>24</axis_fontsize>
-	<legend_fontsize>18</legend_fontsize>
+	<legend_fontsize>22</legend_fontsize>
+	
+	<!--Merged sub-charts selection-->
+	<show_average>true</show_average>
+	<show_min>false</show_min>
+	<show_max>false</show_max>
 </parameters>
